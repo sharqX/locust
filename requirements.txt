@@ -1,0 +1,2 @@
+# Locust
+locust==2.31.6
