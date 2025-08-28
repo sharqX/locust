@@ -57,6 +57,27 @@ def delete_user(user_id):
         return jsonify({"error": "User not found"}), 404
     return jsonify({"message": "User deleted"}), 200
 
+# Some Extra Get Routes
+@app.route('/alpha', methods = ['GET'])
+def alpha():
+    return jsonify({"Codename" : "Alpha"}), 200
+
+@app.route('/beta', methods = ['GET'])
+def beta():
+    return jsonify({"Codename" : "Beta"}), 200
+
+@app.route('/gamma', methods = ['GET'])
+def gamma():
+    return jsonify({"Codename" : "Gamma"}), 200
+
+@app.route('/delta', methods = ['GET'])
+def delta():
+    return jsonify({"Codename" : "Delta"}), 200
+
+@app.route('/epsilon', methods = ['GET'])
+def epsilon():
+    return jsonify({"Codename" : "Epsilon"}), 200
+
 
 if __name__ == '__main__':
     app.run(debug=True)
