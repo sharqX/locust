@@ -1,8 +1,8 @@
 from locust import User, task, constant, between, constant_pacing
 import time
 
+
 class MyUser(User):
-    
 
     # wait_time = constant(1)
     # wait_time = between(2,5)
@@ -15,9 +15,9 @@ class MyUser(User):
     # @task
     # def variableDelay(self):
     #     print("Delay 2 to 5 seconds") # from wait_time = between(2,5)
-    
-    @task 
+
+    @task
     def constantPacingDelay(self):
         time.sleep(3)
-        print("This is Constant Pacing") # this task is taking 3 seconds to complete, extra wait time will not apllied to keep the delay constant betweeen tasks
-
+        # this task is taking 3 seconds to complete, extra wait time will not apllied to keep the delay constant betweeen tasks
+        print("This is Constant Pacing")

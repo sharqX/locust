@@ -1,5 +1,6 @@
 from locust import SequentialTaskSet, task, HttpUser, constant
 
+
 class MySequence(SequentialTaskSet):
 
     @task
@@ -11,6 +12,7 @@ class MySequence(SequentialTaskSet):
     def task2(self):
         res = self.client.get("/delta")
         print(res.text)
+
 
 class MyHttpUser(HttpUser):
     tasks = [MySequence]

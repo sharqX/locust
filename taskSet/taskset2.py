@@ -7,7 +7,7 @@ from locust import TaskSet, HttpUser, constant, task
 #     def getAplha(self):
 #         res = self.client.get("/alpha")
 #         print(res.text)
-        
+
 #     @task
 #     class GetGamma(TaskSet):
 
@@ -15,7 +15,8 @@ from locust import TaskSet, HttpUser, constant, task
 #         def getGamma(self):
 #             res = self.client.get("/gamma")
 #             print(res.text)
-#             self.interrupt(reschedule=False) # if set True returns to parent class immediately 
+#             self.interrupt(reschedule=False) # if set True returns to parent class immediately
+
 
 class GetBeta(TaskSet):
 
@@ -24,6 +25,7 @@ class GetBeta(TaskSet):
         res = self.client.get("/beta")
         print(res.text, "🟢")
         self.interrupt(reschedule=False)
+
 
 class GetDelta(TaskSet):
 
