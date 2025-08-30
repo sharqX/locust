@@ -2,6 +2,7 @@ from locust import SequentialTaskSet, HttpUser, task, constant
 from readcsv import ReadCsv
 import json
 
+
 class Mytasks(SequentialTaskSet):
 
     @task
@@ -12,7 +13,7 @@ class Mytasks(SequentialTaskSet):
             "email": data['email']
         }
         name = f"User created for {data['name']}"
-        with self.client.post("/users", catch_response=True, data=json.dumps(payload), name=name, headers={"content-type":"application/json"}) as response:
+        with self.client.post("/users", catch_response=True, data=json.dumps(payload), name=name, headers={"content-type": "application/json"}) as response:
             if response.status_code == 201 and data['name'] in response.text:
                 response.success()
             else:

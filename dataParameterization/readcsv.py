@@ -1,6 +1,7 @@
 import csv
 import random
 
+
 class ReadCsv():
 
     def __init__(self, file):
@@ -8,7 +9,7 @@ class ReadCsv():
             file = open(file)
         except FileNotFoundError:
             print("File not Found")
-    
+
         self.file = file
         self.reader = csv.DictReader(file)
 
